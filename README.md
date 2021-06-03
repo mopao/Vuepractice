@@ -1,1 +1,1 @@
-# Vuepractice
+# Vue.js practices
