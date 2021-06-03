@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>v-bind Conditionals</title>
+		<meta charset="UTF-8">
+		<script src="js/vue.js"></script>
+		<style>
+			.special {background:yellow; border: 1px dotted #fe0000; padding:30px; display:block; text-align:center;}
+			.important {font-weight:bold; font-size:30px;}
+		</style>
+	</head>
+	<body>
+	
+	<div id="app">
+		<span v-bind:class="{special:isSpecial, important:isImportant}">
+			look at me!
+		</span>
+	</div>
+	<script src="js/vue_2.js"></script>	
+	</body>
+</html>

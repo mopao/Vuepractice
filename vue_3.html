@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>v-if If Statements</title>
+		<meta charset="UTF-8">
+		<script src="https://kit.fontawesome.com/c03ea9a48c.js" crossorigin="anonymous"></script>
+		<script src="js/vue.js"></script>
+		<style>
+			.special {background:yellow; border: 1px dotted #fe0000; padding:30px; display:block; text-align:center;}
+			.important {font-weight:bold; font-size:30px;}
+			.profile-class{
+				max-width: 330px;
+				box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+				padding: 15px;
+				margin: auto;
+				background-color: cornsilk;
+			}
+			img{
+				max-width: 220px;
+				width: 100%;
+
+			}
+			i{
+				display: block !important;
+				margin: auto;
+				font-size: 200px;
+				width: fit-content;
+			}
+			h3{
+				text-transform: capitalize;
+			}
+			figcaption{
+				text-align: center;
+				text-transform: capitalize;
+				font-weight: bolder;
+				font-size: 1.5em;
+			}
+
+		</style>
+	</head>
+	<body>
+	
+	<div id="app">
+		<div v-if="profile" v-bind:class="profileClass">			 
+			<figure>
+			    <img v-if="profile.pic" v-bind:src="'img/' + profile.pic"
+			         alt="profile image">
+			    <i v-else class="fas fa-user"></i>
+			    <figcaption>{{profile.fname}} {{profile.lname}} </figcaption>			    
+			</figure>
+			<div class="profile-details">
+				<section >
+					<h3>bio</h3>
+					<p v-if="profile.bio">
+						{{profile.bio}}
+					</p>					
+					<p v-else="profile.bio">
+						no bio available!
+				    </p>
+				</section>
+				
+				<section>
+					<h3>description</h3>
+					<p v-if="profile.desc">
+						{{profile.desc}}
+					</p>
+					<p v-else="profile.bio">
+						no description available!
+				    </p>
+				</section>
+				
+			</div>	
+		</div>
+		<div v-else>
+			No Profile Data found.
+		</div>
+	</div>
+	
+	<script src="js/vue_3.js">
+
+	</script>		
+	</body>
+</html>

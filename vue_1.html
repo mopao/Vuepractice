@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Intro to v-bind</title>
+		<meta charset="UTF-8">
+		<script src="js/vue.js"></script>
+		<style>
+			.container{background:#cecece;}
+			.highlight {border:  5px solid yellow;}
+			img{
+				display: block;
+				width: 50px;
+				margin-top: 20px;
+			}
+		</style>
+	</head>
+	<body>
+	
+	<div id="app">
+		<!--
+		//step 1: open console
+		//step 2: inspect "look at me!" HTML
+		//step 3: notice how the class is set for the span to "container"
+		
+		v-bind:html_attribute_key="data_object_property"
+		
+		or 
+		
+		v-bind:html_attribute_key="'string_literal'"
+		
+		EXAMPLES
+		data properties
+			v-bind:style="newStyle"
+			v-bind:alt="newAlt"
+		
+		string literals
+			v-bind:href="'www.vuejs.org'"
+			v-bind:style="'display:block;margin-top:20px;'"
+			v-bind:alt="'New Alt Text'"
+		
+		WARNING: Vue.js doesn't like dynamically setting IDs. Try it!
+		
+		ASYNCHRONOUS LEARNING EXERCISE
+			1. Create an image and set the following attributes with Vue {src, alt, title}
+			2. Augment the span below to include another class called "highlight", which has a yellow border.
+		-->
+		<span v-bind:class="[loadClass,newStyle]">
+			look at me!
+		</span>
+
+		<img v-bind:src="'img/' + filename" v-bind:alt="altMsg" v-bind:title="imageTitle">
+	</div>
+	
+	<script src="js/vue_1.js"></script>
+	</body>
+</html>
