@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Vue Components</title>
+		<meta charset="UTF-8">
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<style>
+			.circle{border-radius:50%; background:Grey; border:1px solid #ccc; display:inline-block;}
+		</style>
+	</head>
+	<body>
+	
+		<div id="app">
+			<orb v-bind:radius="40" v-bind:color="'white'" v-bind:x="20" v-bind:y="20"></orb>
+			<orb 
+				v-for="orb in orbs"
+				v-bind:radius="orb.radius"
+				v-bind:color="orb.color"
+				v-bind:x="orb.x"
+				v-bind:y="orb.y"
+				v-bind:key="orb.id"
+				v-on:onprompt="prompt(orb)">
+			</orb>
+		</div>
+		<script type="text/javascript" src="js/vue_6.js"></script>
+	</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	
+		<title>J1 Practice</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<style>
+			.formfield{margin-bottom:10px;}
+		</style>
+	</head>
+	<body>
+		<p>Dog Treats Problem. <a href="https://cemc.uwaterloo.ca/contests/computing/2020/index.html">from the J1 problem hosted by the CCC.</a></p>
+		<div id="app">
+			<div class="formfield">
+				<label>Small Treats: <label> <input v-model="treat_qty_small">
+			</div>
+			<div class="formfield">
+				<label>Medium Treats: <label> <input v-model="treat_qty_medium">
+			</div>
+			<div class="formfield">
+				<label>Large Treats: <label> <input v-model="treat_qty_large">
+			</div>
+			<div id="result">
+				<div><label>show diagnostics:</label><input type="checkbox" v-model="treat_diagnostics"></div>
+				<div v-if="treat_diagnostics">Treat Total: {{treat_total}}</div>
+				<div v-if="treat_diagnostics">Is_Happy: {{is_happy}}</div>
+				<span v-if="is_happy">{{dog_name}} is Happy!</span>
+				<span v-else>{{dog_name}} is sad..</span>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/vue_7.js"></script>
+</body>
+</html>

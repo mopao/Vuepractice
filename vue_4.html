@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>v-for Loops</title>
+		<meta charset="UTF-8">
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<style>
+			ul {list-style-type:none;}
+			ul li{marign-bottom:20px;}
+			.text-red{color: red;}
+			.text-blue{color: blue;}
+			.dialogue{
+				display: block;
+			}
+			div{
+				margin-bottom: 2em;
+			}
+		</style>
+	</head>
+	<body>
+	
+		<div id="app">
+			<ul>
+				<li v-for="part in scene">
+					<span>{{part.character}}</span>
+					<!--
+					<div v-if="part.character == 'MACBETH' " class="text-red">{{part.dialogue}}</div>
+					<div v-if="part.character == 'LADY MACBETH' " class="text-blue">{{part.dialogue}}</div>
+					-->
+					<div v-bind:class="{'text-red': part.character == 'MACBETH' , 'text-blue': part.character == 'LADY MACBETH'}">
+						<span v-for="diag in part.dialogues" class="dialogue">{{diag.dialogue}}</span>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<script type="text/javascript" src="js/vue_4.js"></script>
+	</body>
+</html>
